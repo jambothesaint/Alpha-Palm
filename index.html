@@ -3,292 +3,195 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Alpha Palm | Property And Landscape Maintenance</title>
+  <title>Alpha Palm | Property & Landscape Maintenance</title>
   <meta name="description" content="Alpha Palm - Property and landscape maintenance. Contact Andy for quotes and enquiries.">
-
+  
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
+  
   <style>
     :root{
-      --brand:#f4511e;
-      --brand-dark:#d84315;
-      --brand-soft:#fff3ef;
-      --ink:#222222;
-      --muted:#7d7d7d;
+      --brand:#f05a22;
+      --brand-dark:#d94d1d;
+      --text:#222222;
+      --muted:#6f6f6f;
       --soft:#f7f7f7;
-      --line:rgba(0,0,0,.08);
-      --shadow:0 18px 40px rgba(0,0,0,.08);
+      --dark:#1f1f1f;
     }
 
-    html { scroll-behavior:smooth; }
+    html {
+      scroll-behavior: smooth;
+    }
 
     body{
       font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-      color:var(--ink);
-      background:#fff;
+      color: var(--text);
+      background: #ffffff;
     }
 
     .navbar{
-      background:rgba(255,255,255,.96);
-      backdrop-filter:blur(10px);
-      box-shadow:0 2px 18px rgba(0,0,0,.05);
-    }
-
-    .navbar-brand{
-      font-weight:800;
-      color:var(--ink);
-      text-decoration:none;
-      letter-spacing:.02em;
+      background: rgba(255,255,255,.96);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 2px 18px rgba(0,0,0,.05);
     }
 
     .navbar-brand img{
-      height:48px;
-      width:auto;
-      display:block;
+      height: 50px;
+      width: auto;
+      display: block;
     }
 
-    .navbar .nav-link{
-      color:var(--ink);
-      font-weight:600;
+    .nav-link{
+      font-weight: 600;
+      color: var(--text);
     }
 
-    .navbar .nav-link:hover{
-      color:var(--brand);
+    .nav-link:hover{
+      color: var(--brand);
     }
 
     .btn-brand{
-      background:var(--brand);
-      border-color:var(--brand);
-      color:#fff;
-      font-weight:700;
+      background: var(--brand);
+      border-color: var(--brand);
+      color: #fff;
+      font-weight: 700;
     }
 
     .btn-brand:hover,
     .btn-brand:focus{
-      background:var(--brand-dark);
-      border-color:var(--brand-dark);
-      color:#fff;
-    }
-
-    .btn-outline-dark{
-      font-weight:700;
+      background: var(--brand-dark);
+      border-color: var(--brand-dark);
+      color: #fff;
     }
 
     .hero{
-      position:relative;
-      min-height:90vh;
-      display:flex;
-      align-items:center;
-      overflow:hidden;
+      min-height: 88vh;
+      display: flex;
+      align-items: center;
       background:
-        linear-gradient(135deg, rgba(255,255,255,.95), rgba(255,255,255,.88)),
+        linear-gradient(135deg, rgba(255,255,255,.96), rgba(255,255,255,.90)),
         url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
     }
 
-    .hero::after{
-      content:"";
-      position:absolute;
-      inset:auto -120px -120px auto;
-      width:420px;
-      height:420px;
-      background:radial-gradient(circle, rgba(244,81,30,.10), transparent 68%);
-      pointer-events:none;
-    }
-
-    .hero-logo{
-      height:92px;
-      width:auto;
-      display:block;
-      margin-bottom:1rem;
-    }
-
     .hero-badge{
-      display:inline-block;
-      padding:.5rem .9rem;
-      border-radius:999px;
-      background:var(--brand-soft);
-      color:var(--brand-dark);
-      font-weight:800;
-      font-size:.9rem;
-      margin-bottom:1rem;
+      display: inline-block;
+      padding: .45rem .8rem;
+      border-radius: 999px;
+      background: rgba(240,90,34,.10);
+      color: var(--brand-dark);
+      font-weight: 700;
+      font-size: .9rem;
+      margin-bottom: 1rem;
     }
 
     .hero h1{
-      font-size:clamp(2.4rem, 5vw, 4.8rem);
-      line-height:1;
-      font-weight:900;
-      letter-spacing:-.03em;
-      margin-bottom:1rem;
-      max-width:760px;
+      font-size: clamp(2.4rem, 5vw, 4.8rem);
+      line-height: .98;
+      font-weight: 800;
+      letter-spacing: -.02em;
+      margin-bottom: 1rem;
     }
 
-    .hero .lead{
-      max-width:680px;
-      color:#444;
-      font-size:1.1rem;
-    }
-
-    .hero-card,
-    .content-card,
-    .service-card,
-    .contact-card{
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius:1.25rem;
-      box-shadow:var(--shadow);
+    .hero p.lead{
+      max-width: 700px;
+      color: #444;
+      font-size: 1.15rem;
     }
 
     .hero-card{
-      position:relative;
-      overflow:hidden;
-    }
-
-    .hero-card::before{
-      content:"";
-      position:absolute;
-      top:0;
-      left:0;
-      right:0;
-      height:6px;
-      background:linear-gradient(90deg, var(--brand), var(--brand-dark));
+      background: rgba(255,255,255,.95);
+      border: 1px solid rgba(0,0,0,.06);
+      border-radius: 1.25rem;
+      box-shadow: 0 20px 40px rgba(0,0,0,.08);
     }
 
     .section-padding{
-      padding:5rem 0;
-    }
-
-    .soft-section{
-      background:var(--soft);
+      padding: 5rem 0;
     }
 
     .section-title{
-      font-size:clamp(2rem, 3vw, 3rem);
-      font-weight:900;
-      letter-spacing:-.03em;
-      margin-bottom:.75rem;
+      font-size: clamp(1.9rem, 3vw, 3rem);
+      font-weight: 800;
+      letter-spacing: -.02em;
+      margin-bottom: 1rem;
     }
 
     .section-subtitle{
-      color:var(--muted);
-      max-width:760px;
-      margin:0 auto;
+      color: var(--muted);
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .service-card,
+    .contact-card,
+    .about-card{
+      border: 1px solid rgba(0,0,0,.08);
+      border-radius: 1.25rem;
+      background: #fff;
+      box-shadow: 0 10px 24px rgba(0,0,0,.04);
+      height: 100%;
     }
 
     .service-icon{
-      width:60px;
-      height:60px;
-      border-radius:18px;
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      background:var(--brand-soft);
-      color:var(--brand);
-      font-weight:900;
-      margin-bottom:1rem;
-      font-size:1.1rem;
+      width: 58px;
+      height: 58px;
+      border-radius: 16px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(240,90,34,.10);
+      color: var(--brand);
+      font-size: 1.4rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
     }
 
-    .service-card{
-      height:100%;
-      transition:transform .2s ease, box-shadow .2s ease;
+    .soft-section{
+      background: var(--soft);
     }
 
-    .service-card:hover{
-      transform:translateY(-4px);
-      box-shadow:0 22px 42px rgba(0,0,0,.10);
+    .cta-strip{
+      background: linear-gradient(135deg, var(--brand), var(--brand-dark));
+      color: #fff;
+      border-radius: 1.5rem;
+      box-shadow: 0 18px 40px rgba(240,90,34,.22);
     }
 
-    .mini-point{
-      background:#f9f9f9;
-      border:1px solid var(--line);
-      border-radius:1rem;
-      padding:1rem;
-      height:100%;
-    }
-
-    .mini-point strong{
-      display:block;
-      margin-bottom:.35rem;
-    }
-
-    .gallery-tile{
-      position:relative;
-      min-height:220px;
-      border-radius:1rem;
-      border:1px dashed rgba(0,0,0,.16);
-      background:linear-gradient(135deg, #efefef, #f8f8f8);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      text-align:center;
-      color:#777;
-      font-weight:700;
-      padding:1rem;
-      overflow:hidden;
-    }
-
-    .gallery-tile::before{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:linear-gradient(180deg, rgba(244,81,30,.02), rgba(244,81,30,.08));
-      pointer-events:none;
-    }
-
-    .cta-box{
-      background:linear-gradient(135deg, var(--brand), var(--brand-dark));
-      color:#fff;
-      border-radius:1.5rem;
-      box-shadow:0 20px 45px rgba(244,81,30,.24);
+    .gallery-placeholder{
+      background: linear-gradient(135deg, #efefef, #f8f8f8);
+      border: 1px dashed rgba(0,0,0,.15);
+      border-radius: 1rem;
+      min-height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #777;
+      font-weight: 600;
+      padding: 1rem;
     }
 
     .contact-link{
-      color:var(--ink);
-      text-decoration:none;
-      font-weight:800;
-      word-break:break-word;
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 700;
     }
 
     .contact-link:hover{
-      color:var(--brand);
-    }
-
-    .logo-watermark{
-      position:absolute;
-      right:-30px;
-      bottom:-20px;
-      width:200px;
-      opacity:.07;
-      pointer-events:none;
+      color: var(--brand);
     }
 
     footer{
-      background:#1f1f1f;
-      color:rgba(255,255,255,.82);
+      background: var(--dark);
+      color: rgba(255,255,255,.82);
     }
 
     .footer-link{
-      color:rgba(255,255,255,.82);
-      text-decoration:none;
+      color: rgba(255,255,255,.82);
+      text-decoration: none;
     }
 
     .footer-link:hover{
-      color:#fff;
-    }
-
-    @media (max-width: 991.98px){
-      .hero{
-        min-height:auto;
-        padding:6rem 0 4rem;
-      }
-
-      .hero-logo{
-        height:78px;
-      }
-
-      .navbar-brand img{
-        height:42px;
-      }
+      color: #fff;
     }
   </style>
 </head>
@@ -296,20 +199,17 @@
 
   <nav class="navbar navbar-expand-lg sticky-top">
     <div class="container">
-      <a class="navbar-brand d-flex align-items-center gap-2" href="#home">
-        <img src="assets/logo.png" alt="Alpha Palm logo">
-        <span>Alpha Palm</span>
+      <a class="navbar-brand" href="#home">
+        <img src="assets/Alpha-palm-logo.png" alt="Alpha Palm logo">
       </a>
-
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-
       <div class="collapse navbar-collapse" id="mainNav">
         <ul class="navbar-nav ms-auto me-lg-3">
           <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
           <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-          <li class="nav-item"><a class="nav-link" href="#work">Recent Work</a></li>
+          <li class="nav-item"><a class="nav-link" href="#gallery">Recent Work</a></li>
           <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
         </ul>
         <a href="tel:07568979914" class="btn btn-brand">Call Andy</a>
@@ -318,14 +218,14 @@
   </nav>
 
   <section class="hero" id="home">
-    <div class="container position-relative">
+    <div class="container">
       <div class="row align-items-center g-4">
         <div class="col-lg-7">
-          <img src="assets/logo.png" alt="Alpha Palm logo" class="hero-logo">
-          <span class="hero-badge">Property And Landscape Maintenance</span>
-          <h1>Reliable outdoor and property maintenance with a clean, practical finish.</h1>
-          <p class="lead mt-3 mb-4">
-            Alpha Palm offers straightforward property and landscape maintenance for customers who want the job done properly. Whether it is general outdoor upkeep, tidy-ups, or ongoing maintenance, you can deal directly with Andy from first enquiry to finished work.
+          <span class="hero-badge">Property &amp; Landscape Maintenance</span>
+          <h1>Reliable property &amp; landscape maintenance you can count on.</h1>
+          <p class="lead mt-4 mb-4">
+            Alpha Palm provides property and landscape maintenance with a straightforward, dependable approach.
+            For enquiries, quotes, and local jobs, get in touch directly with Andy.
           </p>
           <div class="d-flex flex-wrap gap-3">
             <a href="tel:07568979914" class="btn btn-brand btn-lg px-4">Call 07568 979 914</a>
@@ -336,7 +236,7 @@
         <div class="col-lg-5">
           <div class="hero-card p-4 p-md-5">
             <h2 class="h4 fw-bold mb-3">Quick Contact</h2>
-            <p class="text-secondary mb-4">The fastest way to get started is a call, text, or email.</p>
+            <p class="text-secondary mb-4">Fastest way to get started is a call, text, or message.</p>
 
             <div class="mb-3">
               <div class="small text-uppercase text-secondary fw-bold mb-1">Phone</div>
@@ -350,12 +250,10 @@
 
             <div class="mb-4">
               <div class="small text-uppercase text-secondary fw-bold mb-1">Social</div>
-              <div class="fw-semibold">Facebook &amp; Instagram</div>
+              <div class="fw-semibold">Facebook and Instagram</div>
             </div>
 
             <a href="#contact" class="btn btn-brand w-100">Get in Touch</a>
-
-            <img src="assets/logo.png" alt="" class="logo-watermark">
           </div>
         </div>
       </div>
@@ -366,43 +264,45 @@
     <div class="container">
       <div class="row g-4 align-items-center">
         <div class="col-lg-6">
-          <div class="content-card p-4 p-md-5 h-100">
+          <div class="about-card p-4 p-md-5">
             <h2 class="section-title mb-3">About Alpha Palm</h2>
             <p class="mb-3">
-              Alpha Palm is a property and landscape maintenance business with a simple approach: turn up, work hard, and leave the place looking better than before.
+              Alpha Palm is a property and landscape maintenance business focused on keeping outdoor spaces
+              and surrounding areas looking neat, usable, and well cared for.
             </p>
             <p class="mb-0 text-secondary">
-              The branding and Facebook presence point to practical outdoor and exterior maintenance work, so this page is built to feel clear, direct, and easy for customers to contact.
+              Whether the job is routine upkeep or a one-off tidy-up, the aim is simple:
+              turn up, do the work properly, and leave the place looking better than before.
             </p>
           </div>
         </div>
 
         <div class="col-lg-6">
-          <div class="content-card p-4 p-md-5 h-100">
-            <h3 class="h4 fw-bold mb-4">Why people like using a local operator</h3>
+          <div class="about-card p-4 p-md-5">
+            <h3 class="h4 fw-bold mb-4">Why customers choose a local operator</h3>
             <div class="row g-3">
               <div class="col-sm-6">
-                <div class="mini-point">
+                <div class="p-3 bg-light rounded-4 h-100">
                   <strong>Direct contact</strong>
-                  <span class="text-secondary small">You speak to the person doing the work.</span>
+                  <p class="mb-0 text-secondary small mt-2">Speak to the person doing the work.</p>
                 </div>
               </div>
               <div class="col-sm-6">
-                <div class="mini-point">
-                  <strong>Clear communication</strong>
-                  <span class="text-secondary small">Simple quotes and straightforward job discussions.</span>
+                <div class="p-3 bg-light rounded-4 h-100">
+                  <strong>Clear quotes</strong>
+                  <p class="mb-0 text-secondary small mt-2">Simple communication from first enquiry.</p>
                 </div>
               </div>
               <div class="col-sm-6">
-                <div class="mini-point">
-                  <strong>Tidy results</strong>
-                  <span class="text-secondary small">Focused on practical improvements and presentable finishes.</span>
+                <div class="p-3 bg-light rounded-4 h-100">
+                  <strong>Practical service</strong>
+                  <p class="mb-0 text-secondary small mt-2">Focused on real, useful maintenance work.</p>
                 </div>
               </div>
               <div class="col-sm-6">
-                <div class="mini-point">
-                  <strong>Flexible jobs</strong>
-                  <span class="text-secondary small">Suitable for one-off work or regular maintenance.</span>
+                <div class="p-3 bg-light rounded-4 h-100">
+                  <strong>Local reputation</strong>
+                  <p class="mb-0 text-secondary small mt-2">Built through repeat work and recommendations.</p>
                 </div>
               </div>
             </div>
@@ -417,7 +317,7 @@
       <div class="text-center mb-5">
         <h2 class="section-title">Services</h2>
         <p class="section-subtitle">
-          Built around the business card and Facebook description, this keeps the wording broad, credible, and relevant to property and landscape maintenance.
+          Alpha Palm offers practical property and landscape maintenance with a tidy, dependable approach.
         </p>
       </div>
 
@@ -427,7 +327,7 @@
             <div class="service-icon">01</div>
             <h3 class="h5 fw-bold">Garden Upkeep</h3>
             <p class="text-secondary mb-0">
-              General outdoor maintenance to help keep gardens and surrounding areas neat, practical, and manageable.
+              General outdoor maintenance to help keep gardens and exterior spaces neat and manageable.
             </p>
           </div>
         </div>
@@ -437,7 +337,7 @@
             <div class="service-icon">02</div>
             <h3 class="h5 fw-bold">Landscape Maintenance</h3>
             <p class="text-secondary mb-0">
-              Ongoing care for landscaped spaces, edges, surfaces, and outdoor areas that need regular attention.
+              Ongoing care and tidy-up work for outdoor areas, borders, and general landscaped spaces.
             </p>
           </div>
         </div>
@@ -447,7 +347,7 @@
             <div class="service-icon">03</div>
             <h3 class="h5 fw-bold">Property Exterior Care</h3>
             <p class="text-secondary mb-0">
-              Practical exterior maintenance work to help keep properties looking presentable and well kept.
+              Practical maintenance around the property to help keep outside areas presentable and usable.
             </p>
           </div>
         </div>
@@ -455,9 +355,9 @@
         <div class="col-md-6 col-xl-3">
           <div class="service-card p-4">
             <div class="service-icon">04</div>
-            <h3 class="h5 fw-bold">One-Off or Regular Jobs</h3>
+            <h3 class="h5 fw-bold">One-Off or Regular Work</h3>
             <p class="text-secondary mb-0">
-              Ideal for single tidy-up jobs, seasonal work, or regular maintenance depending on what is needed.
+              Suitable for one-off jobs, seasonal tidying, or regular maintenance depending on what’s needed.
             </p>
           </div>
         </div>
@@ -465,24 +365,24 @@
     </div>
   </section>
 
-  <section class="section-padding" id="work">
+  <section class="section-padding" id="gallery">
     <div class="container">
       <div class="text-center mb-5">
         <h2 class="section-title">Recent Work</h2>
         <p class="section-subtitle">
-          Replace these placeholders with real Facebook images once you have downloaded them. This section will look much stronger with genuine work photos.
+          Replace these placeholders with real job photos for a stronger before-and-after style layout.
         </p>
       </div>
 
       <div class="row g-4">
         <div class="col-md-6 col-lg-4">
-          <div class="gallery-tile">Add a completed garden or outdoor tidy-up photo here</div>
+          <div class="gallery-placeholder">Add completed garden or outdoor tidy-up photo here</div>
         </div>
         <div class="col-md-6 col-lg-4">
-          <div class="gallery-tile">Add a property exterior maintenance photo here</div>
+          <div class="gallery-placeholder">Add property exterior maintenance photo here</div>
         </div>
         <div class="col-md-6 col-lg-4">
-          <div class="gallery-tile">Add a before / after job image here</div>
+          <div class="gallery-placeholder">Add before / after work photo here</div>
         </div>
       </div>
     </div>
@@ -490,12 +390,12 @@
 
   <section class="pb-5">
     <div class="container">
-      <div class="cta-box p-4 p-md-5">
+      <div class="cta-strip p-4 p-md-5">
         <div class="row align-items-center g-3">
           <div class="col-lg-8">
             <h2 class="fw-bold mb-2">Need a quote for property or landscape maintenance?</h2>
             <p class="mb-0 opacity-75">
-              Get in touch with Alpha Palm to discuss the work and arrange the next step.
+              Get in touch with Alpha Palm to discuss the job and arrange the next step.
             </p>
           </div>
           <div class="col-lg-4 text-lg-end">
@@ -517,7 +417,7 @@
 
       <div class="row g-4 justify-content-center">
         <div class="col-md-6 col-lg-4">
-          <div class="contact-card p-4 text-center h-100">
+          <div class="contact-card p-4 text-center">
             <h3 class="h5 fw-bold mb-2">Phone</h3>
             <p class="text-secondary">Speak directly with Andy</p>
             <a class="contact-link fs-4" href="tel:07568979914">07568 979 914</a>
@@ -525,18 +425,18 @@
         </div>
 
         <div class="col-md-6 col-lg-4">
-          <div class="contact-card p-4 text-center h-100">
+          <div class="contact-card p-4 text-center">
             <h3 class="h5 fw-bold mb-2">Email</h3>
-            <p class="text-secondary">Send over your photos or details</p>
+            <p class="text-secondary">Send photos or job details</p>
             <a class="contact-link" href="mailto:alphapalm@aol.com">alphapalm@aol.com</a>
           </div>
         </div>
 
         <div class="col-md-6 col-lg-4">
-          <div class="contact-card p-4 text-center h-100">
-            <h3 class="h5 fw-bold mb-2">Facebook</h3>
-            <p class="text-secondary">Visit the business page</p>
-            <a class="contact-link" href="https://www.facebook.com/palm.alpha" target="_blank" rel="noopener">facebook.com/palm.alpha</a>
+          <div class="contact-card p-4 text-center">
+            <h3 class="h5 fw-bold mb-2">Social</h3>
+            <p class="text-secondary">Find Alpha Palm online</p>
+            <a class="contact-link" href="https://www.facebook.com/palm.alpha" target="_blank" rel="noopener">Facebook page</a>
           </div>
         </div>
       </div>
